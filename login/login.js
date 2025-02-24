@@ -56,7 +56,7 @@ submit.addEventListener('click', e=>{
                     progressFail.style.backgroundColor="green";
                     progressFail.style.color="white"
                     document.getElementsByClassName('load')[0].style.display="block"
-                    setTimeout(()=>location.href="/HomePage.html", 5000)
+                    setTimeout(()=>location.href="../HomePage.html", 5000)
                     break;
             
                 case false:
