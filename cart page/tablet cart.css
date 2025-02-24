@@ -1,0 +1,58 @@
+@media only screen and (min-width: 601px) and (max-width: 991px) {
+    main{
+        width: 100%;
+        height: fit-content;
+    }
+    #cart{
+        width: 20%;
+        height: auto;
+    }
+    #back{
+        width: 5%;
+        background-color: wheat;
+        border-radius: 50px;
+        padding: 1%;
+        position: fixed;
+        top: 1%;
+        left: 2%;
+        z-index: 1;
+    }
+    .cart-container{
+        padding: 1%;
+        width: 100%;
+        height: 20%;
+        margin-top: 5%;
+        display: flex;
+        border-style: outset;
+        position: relative;
+        right: 1%;
+    }
+    #text{
+        width: 57%;
+        position: relative;
+        display: grid;
+        left:1%;
+    }
+    .remove{
+        width: 20%;
+        height: 19%;
+        background-color: red;
+        color: white;
+        border: none;
+        margin-right: -20%;
+        padding: 1%;
+        font-size: 100%;
+    }
+    .buy{
+        width: 20%;
+        height: 19%;
+        background-color: green;
+        position: relative;
+        margin-top: 19%;
+        color: white;
+        border: none;
+        display: block;
+        font-size: 100%;
+        padding: 1%;
+    }
+    }
