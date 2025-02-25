@@ -12,19 +12,15 @@ let display = products.forEach(item=>{
 
 
 //search bar functionality
-searchProduct.addEventListener('change', (e)=>{
+searchProduct.addEventListener('input', (e)=>{
   let search = searchProduct.value.toLowerCase()
   productDiv.innerHTML="";
-  products.forEach(item=>{
-    if(search.includes(item.category)){
-      productDisplay(item)
-      part.classList.add('hidden')
-      
-    }else if (search==="") {
-      part.classList.remove('hidden')
-      location.href="./HomePage.html"
-    }
-  })
+  
+  let filteredItems = products.filter(item=>
+    item.category.toLowerCase().includes(search) || item.name.toLowerCase().includes(search)
+  )
+
+  filteredItems.length > 0 ? filteredItems.forEach(productDisplay) : productDiv.innerHTML="out of stock"
   
 });
 
@@ -102,53 +98,49 @@ function decrease(e) {
   
   
 
-
 function cart(p) {
-  
-  let cart = JSON.parse(localStorage.getItem('cart'))
-  if (!cart) {
-    cartSave(p)
-  } else if(cart){
-    cart.forEach(element => {
-      if (element.name === p.name) {
-        return alert(element.name + " already added to cart")
-        
-      } else if(element.name !== p.name) {
-        return cartSave(p)
-      }
-    })
-  }
-  
-  
-}
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+  // Check if product already exists in the cart
+  let existingProduct = cart.find(item => item.name === p.name);
+  
+  if (existingProduct) {
+    return alert(`${p.name} is already in the cart`);
+  } else {
+    cartSave(p);
+  }
+}
 
 function cartSave(a) {
-  let confirm = document.getElementById('confirm')
-  confirm.style.display="block";
-  confirm.innerHTML=`<div id="confirm-addto-cart">
-                    <span>Do you want to add ${a.name} to cart?</span><br>
-                    <button id="cancel">cancel</button>
-                    <button id="accept">okay</button>
-                   </div>`
-          
-            let cancel = document.getElementById('cancel')
-            cancel.addEventListener('click', e=>confirm.style.display="none")
+  let confirm = document.getElementById('confirm');
+  confirm.style.display = "block";
+  confirm.innerHTML = `
+    <div id="confirm-addto-cart">
+      <span>Do you want to add ${a.name} to the cart?</span><br>
+      
+      <button id="cancel">Cancel</button>
+      <button id="accept">Okay</button>
+    </div>`;
 
-            let accept = document.getElementById('accept')
+  let cancel = document.getElementById('cancel');
+  cancel.addEventListener('click', () => (confirm.style.display = "none"));
 
-            
-            accept.addEventListener('click', e=>{
-              let quant = document.getElementById('quantity').value
-              let product = JSON.parse(localStorage.getItem('cart')) || []
-              product.quantity=quant
-              product.push(a)
-              localStorage.setItem('cart', JSON.stringify(product) )
-              alert(`${quant} ${a.name} added to cart`)
-              confirm.style.display="none";
+  let accept = document.getElementById('accept');
+  accept.addEventListener('click', () => {
+    let quant = parseInt(document.getElementById('quantity').value, 10) || 1;
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            })  
+    // Add product with quantity
+    let newProduct = { ...a, quantity: quant };
+    cart.push(newProduct);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(`${quant} ${a.name} added to cart`);
+    confirm.style.display = "none";
+  });
 }
+
 
 let userName = JSON.parse(localStorage.getItem('user data'))
 
