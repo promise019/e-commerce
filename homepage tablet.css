@@ -265,7 +265,7 @@
         top: 0%;
         left: 0%;
         z-index: 4;
-        background-image: url('./images/transparent\ background.png');
+        background-image: url('./images/transparent.png');
         background-position: center;
         background-size: cover;
         width: 100%;
@@ -609,7 +609,7 @@
         top: 0%;
         left: 0%;
         z-index: 4;
-        background-image: url('./images/transparent\ background.png');
+        background-image: url('./images/transparent.png');
         background-position: center;
         background-size: cover;
         width: 100%;
