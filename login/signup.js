@@ -34,11 +34,12 @@ signup_submit.addEventListener('click', e=>{
         document.getElementById("first-name").style.border="1px solid red";
         document.getElementById("signup-password").style.border="1px solid red";
         document.getElementById("signup-email").style.border="1px solid red";
+        progress_fail.innerText="form is empty";
+        progress_fail.classList.add('fail')
 
     } else if (signup_email === "") {
         progress_fail.innerText="please input email";
-        progress_fail.style.backgroundColor="red";
-        progress_fail.style.color="white"
+        progress_fail.classList.add('fail')
         document.getElementById("signup-email").style.border="1px solid red";
         document.getElementById("signup-password").style.border="";
         document.getElementById("last-name").style.border="";
@@ -46,8 +47,7 @@ signup_submit.addEventListener('click', e=>{
         
     } else if (signup_password === "") {
         progress_fail.innerText="please input password";
-        progress_fail.style.backgroundColor="red";
-        progress_fail.style.color="white"
+        progress_fail.classList.add('fail')
         document.getElementById("signup-password").style.border="1px solid red";
         document.getElementById("signup-email").style.border="";
         document.getElementById("last-name").style.border="";
@@ -55,8 +55,7 @@ signup_submit.addEventListener('click', e=>{
 
     } else if (lastName && firstName === "") {
         progress_fail.innerText="please input password";
-        progress_fail.style.backgroundColor="red";
-        progress_fail.style.color="white"
+        progress_failclassList.add('fail')
         document.getElementById("last-name").style.border="1px solid red";
         document.getElementById("first-name").style.border="1px solid red";
         document.getElementById("signup-email").style.border="";
@@ -64,8 +63,7 @@ signup_submit.addEventListener('click', e=>{
 
     } else if (signup_password.length < 6) {
         progressFail.innerHTML="password must be more than 6 characters";
-        progressFail.style.backgroundColor="red";
-        progressFail.style.color="white"
+        progressFailclassList.add('fail')
         document.getElementById("password").style.border="1px solid red";
         document.getElementById("email").style.border=""
     } else {
@@ -75,14 +73,13 @@ signup_submit.addEventListener('click', e=>{
                 check ? resolve('account successfully created') : reject('error creating account')
                     setTimeout(()=>{progress_fail.innerHTML=""
                         location.href="signup.html"
-                    }, 5000)
+                    }, 3000)
                 }, 2000)
             
                 
         })
         promise.then(response=>{progress_fail.innerHTML=response
-            progress_fail.style.background="green";
-            progress_fail.style.color=="white"
+            progress_fail.classList.add('successful')
         })
                .catch(err=>progress_fail.innerHTML=err)
     }

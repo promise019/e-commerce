@@ -2,10 +2,21 @@
     body{
         background-color: white;
     }
-    #progress-fail{
+    .fail{
+        background-color: red;
         position: relative;
         padding: 1%;
         font-weight: bolder;
+        color: white;
+        text-align: center;
+        left: 0%;
+    }
+    .successful{
+        background-color: green;
+        position: relative;
+        padding: 1%;
+        font-weight: bolder;
+        color: white;
         text-align: center;
         left: 0%;
     }
@@ -79,10 +90,21 @@
         overflow-x: hidden;
         width: 90%;
     }
-    #progress-fail{
+    .fail{
+        background-color: red;
         position: relative;
         padding: 1%;
         font-weight: bolder;
+        color: white;
+        text-align: center;
+        left: 0%;
+    }
+    .successful{
+        background-color: green;
+        position: relative;
+        padding: 1%;
+        font-weight: bolder;
+        color: white;
         text-align: center;
         left: 0%;
     }
@@ -152,10 +174,21 @@
     body{
         background-color: white;
     }
-    #progress-fail{
+    .fail{
+        background-color: red;
         position: relative;
         padding: 1%;
         font-weight: bolder;
+        color: white;
+        text-align: center;
+        left: 0%;
+    }
+    .successful{
+        background-color: green;
+        position: relative;
+        padding: 1%;
+        font-weight: bolder;
+        color: white;
         text-align: center;
         left: 0%;
     }
@@ -232,14 +265,24 @@
     body{
         background-color: white;
     }
-    #progress-fail{
+    .fail{
+        background-color: red;
         position: relative;
         padding: 1%;
         font-weight: bolder;
+        color: white;
         text-align: center;
         left: 0%;
     }
-
+    .successful{
+        background-color: green;
+        position: relative;
+        padding: 1%;
+        font-weight: bolder;
+        color: white;
+        text-align: center;
+        left: 0%;
+    }
     main{
         overflow-x: hidden;
         width: 90%;
@@ -310,10 +353,21 @@
     body{
         background-color: white;
     }
-    #progress-fail{
+    .fail{
+        background-color: red;
         position: relative;
         padding: 1%;
         font-weight: bolder;
+        color: white;
+        text-align: center;
+        left: 0%;
+    }
+    .successful{
+        background-color: green;
+        position: relative;
+        padding: 1%;
+        font-weight: bolder;
+        color: white;
         text-align: center;
         left: 0%;
     }
@@ -391,14 +445,24 @@
     body{
         background-color: white;
     }
-    #progress-fail{
+    .fail{
+        background-color: red;
         position: relative;
         padding: 1%;
         font-weight: bolder;
+        color: white;
         text-align: center;
         left: 0%;
     }
-
+    .successful{
+        background-color: green;
+        position: relative;
+        padding: 1%;
+        font-weight: bolder;
+        color: white;
+        text-align: center;
+        left: 0%;
+    }
     main{
         overflow-x: hidden;
         width: 90%;
